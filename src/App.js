@@ -1,10 +1,12 @@
 import { useEffect } from "react";
+import Navbar from "./components/Navbar";
 
 
 function App() {
   return (
     <div className="App">
-      Hii hellooo dhfhfghf
+      <Navbar/>
+
     </div>
   );
 }
