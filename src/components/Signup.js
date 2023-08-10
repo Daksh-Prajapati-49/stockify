@@ -33,7 +33,7 @@ const Signup = () => {
   return (
     <main >        
         <section>
-            <div style={{border:"1px solid black",margin:"auto",width:"50%"}}>
+            <div style={{margin:"auto",width:"50%"}}>
                 <div>                                                                                              
                     <form>                                                                                            
                         <div style={{margin:"auto",width:"50%",padding:"1rem"}}>
@@ -79,7 +79,7 @@ const Signup = () => {
                                                                      
                     </form>
                    
-                    <p style={{marginLeft:"65%",width:"50%"}}>
+                    <p style={{marginLeft:"35%",width:"50%"}}>
                         Already have an account?{' '}
                         <NavLink to="/login" >
                             Sign in
