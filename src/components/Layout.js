@@ -4,25 +4,25 @@ const Layout = () => {
   return (
     <>
       <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-          <li>
-            <Link to="/signup">Signup</Link>
-          </li>
-        </ul>
+        <div style={{ background: "red", padding: "2rem",display:"flex",justifyContent:"space-around" }}>
+          <div>
+            <Link to="/"><b>HOME</b></Link>
+          </div>
+          <div>
+            <Link to="/about"><b>ABOUT</b></Link>
+          </div>
+          <div>
+            <Link to="/login"><b>LOGIN</b></Link>
+          </div>
+          <div>
+            <Link to="/signup"><b>SIGNUP</b></Link>
+          </div>
+        </div>
       </nav>
 
       <Outlet />
     </>
-  )
+  );
 };
 
 export default Layout;
