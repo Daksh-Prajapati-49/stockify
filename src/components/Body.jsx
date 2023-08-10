@@ -1,20 +1,34 @@
 import React, { useState } from 'react'
 import Modal from './Modal'
+import axios from "axios";
 import { LongDialog } from './LongModal'
 import {
   Button,
 } from "@material-tailwind/react";
 
+const baseURL = "https://stockify-backend-five.vercel.app/predict";
 
 const Body = () => {
+  const [data, setData] = useState({});
   const [amt, setAmt] = useState(0)
   const [window, setWindow] = useState("")
   const [date, setDate] = useState("")
-
+  const config = {
+    headers: {
+      principle: amt,
+      ExpectedDate: date,
+      factor: window
+    }
+  }
   // Modal 
-  const [open, setOpen] = React.useState(false);
- 
-  const handleOpen = () => setOpen(!open);
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(!open);
+    axios.get(baseURL,config).then((response) => {
+      setData(response.data.stocks.selectedStocks);
+      console.log(response.data);
+    });
+  }
   // const [showModal, setShowModal] = useState(false);
 
   return (
@@ -38,25 +52,11 @@ const Body = () => {
           </label>
           <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="date" placeholder="Username" value={date} onChange={(e) => { setDate(e.value) }} />
         </div>
-        {/* <div className="flex items-center justify-between">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-            Submit
-          </button>
-        </div> */}
-
-        {/* <button
-          className="bg-blue-800 text-white active:bg-blue-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-          type="button"
-          onClick={() => setShowModal(true)}
-        >
-          Open regular modal
-        </button> */}
         <Button onClick={handleOpen}>Long Dialog</Button>
-        
-        {/* <Modal setShowModal={setShowModal} showModal={showModal}/> */}
-        <LongDialog open={open} setOpen={setOpen} handleOpen={handleOpen}/>
 
-        
+        <LongDialog open={open} setOpen={setOpen} handleOpen={handleOpen} />
+
+
 
 
 
