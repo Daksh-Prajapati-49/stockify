@@ -29,41 +29,45 @@ const Login = () => {
         <>
             <main >        
                 <section>
-                    <div>                                            
-                        <p> FocusApp </p>                       
-                                                       
+                    <div style={{border:"1px solid black",margin:"auto",width:"50%"}}>                                                                 
                         <form>                                              
-                            <div>
+                            <div style={{margin:"auto",width:"50%",padding:"1rem"}}>
                                 <label htmlFor="email-address">
-                                    Email address
+                                    <b>Email:</b>
                                 </label>
                                 <input
                                     id="email-address"
                                     name="email"
                                     type="email"                                    
                                     required                                                                                
-                                    placeholder="Email address"
                                     onChange={(e)=>setEmail(e.target.value)}
                                 />
                             </div>
 
-                            <div>
+                            <div style={{margin:"auto",width:"50%",padding:"1rem"}}>
                                 <label htmlFor="password">
-                                    Password
+                                    <b>Password:</b>
                                 </label>
                                 <input
                                     id="password"
                                     name="password"
                                     type="password"                                    
                                     required                                                                                
-                                    placeholder="Password"
                                     onChange={(e)=>setPassword(e.target.value)}
                                 />
                             </div>
                                                 
-                            <div>
+                            <div style={{margin:"auto",width:"50%"}}>
                                 <button                                    
-                                    onClick={onLogin}                                        
+                                    onClick={onLogin}
+                                    style={{width:"50%",backgroundColor: "#4CAF50",
+                            color: "white",
+                            padding: "15px 32px",
+                            textAlign:"center",
+                            fontSize:"16px",
+                            cursor: "pointer",
+                            marginLeft:"6rem"
+                        }}                                               
                                 >      
                                     Login                                                                  
                                 </button>

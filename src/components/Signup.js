@@ -33,48 +33,53 @@ const Signup = () => {
   return (
     <main >        
         <section>
-            <div>
-                <div>                  
-                    <h1> FocusApp </h1>                                                                            
+            <div style={{border:"1px solid black",margin:"auto",width:"50%"}}>
+                <div>                                                                                              
                     <form>                                                                                            
-                        <div>
+                        <div style={{margin:"auto",width:"50%",padding:"1rem"}}>
                             <label htmlFor="email-address">
-                                Email address
+                                <b>Email:</b>
                             </label>
                             <input
                                 type="email"
                                 label="Email address"
                                 value={email}
-                                onChange={(e) => setEmail(e.target.value)}  
-                                required                                    
-                                placeholder="Email address"                                
+                                onChange={(e) => setEmail(e.target.value)}
+                                required                                                                
                             />
                         </div>
 
-                        <div>
+                        <div style={{margin:"auto",width:"50%",padding:"1rem"}}>
                             <label htmlFor="password">
-                                Password
+                                <b>Password:</b>
                             </label>
                             <input
                                 type="password"
                                 label="Create password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)} 
-                                required                                 
-                                placeholder="Password"              
+                                required                                               
                             />
                         </div>                                             
                         
                         <button
                             type="submit" 
-                            onClick={onSubmit}                        
+                            onClick={onSubmit}
+                            style={{width:"20%",backgroundColor: "#4CAF50",
+                            color: "white",
+                            padding: "15px 32px",
+                            textAlign:"center",
+                            fontSize:"16px",
+                            cursor: "pointer",
+                            marginLeft:"40%"
+                        }}                    
                         >  
                             Sign up                                
                         </button>
                                                                      
                     </form>
                    
-                    <p>
+                    <p style={{marginLeft:"65%",width:"50%"}}>
                         Already have an account?{' '}
                         <NavLink to="/login" >
                             Sign in
