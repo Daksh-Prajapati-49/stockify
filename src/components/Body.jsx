@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
 import Modal from './Modal'
+import { LongDialog } from './LongModal'
+import {
+  Button,
+} from "@material-tailwind/react";
+
 
 const Body = () => {
   const [amt, setAmt] = useState(0)
@@ -7,7 +12,10 @@ const Body = () => {
   const [date, setDate] = useState("")
 
   // Modal 
-  const [showModal, setShowModal] = useState(false);
+  const [open, setOpen] = React.useState(false);
+ 
+  const handleOpen = () => setOpen(!open);
+  // const [showModal, setShowModal] = useState(false);
 
   return (
     <div className="flex justify-center">
@@ -36,15 +44,17 @@ const Body = () => {
           </button>
         </div> */}
 
-        <button
+        {/* <button
           className="bg-blue-800 text-white active:bg-blue-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
           type="button"
           onClick={() => setShowModal(true)}
         >
           Open regular modal
-        </button>
+        </button> */}
+        <Button onClick={handleOpen}>Long Dialog</Button>
         
-        <Modal setShowModal={setShowModal} showModal={showModal}/>
+        {/* <Modal setShowModal={setShowModal} showModal={showModal}/> */}
+        <LongDialog open={open} setOpen={setOpen} handleOpen={handleOpen}/>
 
         
 
